@@ -7,6 +7,6 @@ class Account < ActiveRecord::Base
   has_many :games
 
   def to_label
-    "#{self.login}"
+    "#{self.system} - #{self.login}"
   end
 end

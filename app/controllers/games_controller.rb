@@ -2,13 +2,13 @@ class GamesController < ApplicationController
   authorize_resource
   active_scaffold :"game" do |config|
     config.list.per_page = 50
-    config.columns.add :uss_price, :brl_price, :uss_original, :brl_original
+    config.columns.add :uss_price, :brl_price, :uss_original, :brl_original, :pack
     
     config.columns[:account].form_ui = :record_select
     config.columns[:group].form_ui = :record_select
     config.columns[:parent].form_ui = :record_select
     style = {:style => 'width: 60px; margin-left: 2px;'}
-    [:price, :original_price].each do |c|
+    [:price, :original_price, :count].each do |c|
       config.columns[c].options = style
     end
 
@@ -27,6 +27,7 @@ class GamesController < ApplicationController
       :is_brl,
       :account,
       :parent,
+      :count
     ]
    
     config.create.columns = columns
@@ -41,6 +42,7 @@ class GamesController < ApplicationController
       :brl_price,
       :brl_original,
       :count,
+      :pack
 
     ]
     

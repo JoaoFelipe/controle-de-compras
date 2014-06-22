@@ -5,3 +5,7 @@ tr.total_points{
 tr.total_points td{
     color: #ffffff !important;
 }
+
+.derivedcount {
+	color: blue !important;
+}

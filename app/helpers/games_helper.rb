@@ -15,4 +15,18 @@ module GamesHelper
     '%.2f' % record.brl_original
   end
 
+  def count_column(record, input_name)
+    unless record.children.empty?
+      c = record.count + record.children.size
+      "<span class='derivedcount'>#{c}</span>".html_safe
+    else
+      record.count
+    end
+  end
+
+  def pack_column(record, input_name)
+    checked = ""
+    checked = "checked" if !record.parent.nil? or !record.children.empty?
+    "<input disabled type='checkbox' #{checked}>".html_safe
+  end
 end
