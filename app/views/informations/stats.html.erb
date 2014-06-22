@@ -1,0 +1,81 @@
+<div id="as_statuses-active-scaffold" class="active-scaffold active-scaffold-as_statuses  statuses-view default-theme">
+  <div class="active-scaffold-header">
+  	<h2> Estatísticas </h2>
+  </div>
+  <div id="as_stats-content" class="as_content stats_content">
+  	<span class="stat_text"> Jogos únicos: <%= @count %></span>
+  	<span class="stat_text"> Situações: </span>
+  	<table class="showtable listed-records-table">
+  		<thead>
+  			<tr>
+  				<th> Usuário </th>
+  				<th> Jogados </th>
+  				<th> Zerados </th>
+  				<th> 100% </th>
+  				<th> Total </th>
+  			</tr>
+  		</thead>
+  		<tbody class="records">
+  			<% count = 0 %>
+  			<% @statuses.each_pair do |status, situation| %>
+  				<% count += 1 %>
+      			<% tr_class = count.even? ? "even-record" : "" %>
+  				<tr class="record <%=tr_class%>">
+  					<td> <%= status.user.name %> </td>
+  					<td> <%= situation['Jogado'] || 0 %> </td>
+  					<td> <%= situation['Zerado'] || 0 %> </td>
+  					<td> <%= situation['100%'] || 0 %> </td>
+  					<td> <%= situation['Total'] %> </td>	
+  				</tr>
+  			<% end %>
+  		</tbody>
+  	</table>
+  	<span class="stat_text"> Contagem: </span>
+  	<table class="showtable listed-records-table">
+  		<thead>
+  			<tr>
+  				<th> Sistema </th>
+  				<th> Conta </th>
+  				<th> Quantidade </th>
+  				<th> Preço (US$) </th>
+  				<th> Original (US$) </th>
+  				<th> Economia (US$) </th>
+  				<th> Preço (R$) </th>
+  				<th> Original (R$) </th>
+  				<th> Economia (R$) </th>
+  			</tr>
+  		</thead>
+  		<tbody class="records">
+  			<% count = 0 %>
+  			<% @accounts.each_pair do |login, info| %>
+  				<% count += 1 %>
+      			<% tr_class = count.even? ? "even-record" : "" %>
+  				<tr class="record <%=tr_class%>">
+  					<td> <%= info[:system] %> </td>
+  					<td> <%= info[:login] %> </td>
+  					<td> <%= info[:count] %> </td>
+  					<td> <%= '%.2f' % info[:uss_price] %> </td>
+  					<td> <%= '%.2f' % info[:uss_original] %> </td>	
+  					<td> <%= '%.2f' % info[:uss_savings] %> </td>	
+  					<td> <%= '%.2f' % info[:brl_price] %> </td>
+  					<td> <%= '%.2f' % info[:brl_original] %> </td>	
+  					<td> <%= '%.2f' % info[:brl_savings] %> </td>	
+  				</tr>
+  			<% end %>
+  			<% count += 1 %>
+      		<% tr_class = count.even? ? "even-record" : "" %>
+  			<tr class="record total_points">
+				<td> Total </td>
+				<td> </td>
+				<td> <%= @count_total %> </td>
+				<td> <%= '%.2f' % @uss_total %> </td>
+				<td> <%= '%.2f' % @uss_total_original %> </td>	
+				<td> <%= '%.2f' % @uss_savings_total %> </td>	
+				<td> <%= '%.2f' % @brl_total %> </td>
+				<td> <%= '%.2f' % @brl_total_original %> </td>	
+				<td> <%= '%.2f' % @brl_savings_total %> </td>	
+			</tr>
+  		</tbody>
+  	</table>
+  </div>
+</div>

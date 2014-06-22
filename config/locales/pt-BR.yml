@@ -1,0 +1,213 @@
+# encoding utf-8
+
+pt-BR:
+
+  errors:
+    format: "%{attribute} %{message}"
+
+    messages: &errors_messages
+      accepted: "deve ser aceito"
+      blank: "não pode ficar em branco"
+      confirmation: "não está igual"
+      empty: "não pode ficar vazio"
+      equal_to: "deve ser igual a %{count}"
+      even: "deve ser par"
+      exclusion: "não está disponível"
+      greater_than: "deve ser maior que %{count}"
+      greater_than_or_equal_to: "deve ser maior ou igual a %{count}"
+      inclusion: "não está incluído na lista"
+      invalid: "não é válido"
+      less_than: "deve ser menor que %{count}"
+      less_than_or_equal_to: "deve ser menor ou igual a %{count}"
+      not_a_number: "não é um número"
+      not_an_integer: "não é um número inteiro"
+      odd: "deve ser ímpar"
+      taken: "já existe"
+      too_long: "é muito longo (máximo: %{count} caracteres)"
+      too_short: "é muito curto (mínimo: %{count} caracteres)"
+      wrong_length: "não possui o tamanho esperado (%{count} caracteres)"
+
+    template:
+      header:
+        one: "Não foi possível gravar %{model}: 1 erro"
+        other: "Não foi possível gravar %{model}: %{count} erros."
+      body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+
+  activerecord:   
+    attributes:
+      account:
+        login: "Login"
+        password: "Senha"
+        system: "Sistema"
+        email: "E-mail"
+        facebook: "Facebook"
+      email:
+        address: "Endereço"
+        password: "Senha"
+      game:
+        name: "Nome"
+        uss_price: "Preço (US$)"
+        brl_price: "Preço (R$)"
+        uss_original: "Original (US$)"
+        brl_original: "Original (R$)"
+        count: "Quantidade"
+        price: "Preço"
+        original_price: "Original"
+        is_brl: "Reais"
+        account: "Conta"
+        parent: "Pai"
+        children: "Contém"
+        group: "Grupo"
+      group:
+        name: "Nome"
+        url: "URL"
+        dollar: "Valor do dollar"
+        games: "Jogos"
+        date: "Data"
+      role:
+        description: "Descrição"
+        name: "Nome"
+      status:
+        game_name: "Jogo"
+        status: "Situação"
+        game: "Jogo"
+        user: "Usuário"
+      user:
+        name: "Nome do usuário"
+        password: "Senha"
+        password_confirmation: "Digite a senha novamente"
+        role: Papel
+      version:
+        created_at: "Modificado em"
+        current_object: "Versão Atual"
+        current_object_destroyed: "Objeto Deletado"
+        event: "Ação"
+        event_options:
+          create: "Criação"
+          destroy: "Remoção"
+          update: "Atualização"
+        item_id: "ID do Objeto"
+        item_type: "Modelo"
+        label: "%{event} de %{type}"
+        object: "Objeto Anterior"
+        old_version: "Versão Antiga"
+        relationship_object: "Objeto de Relacionamento"
+        user: "Usuário"
+        whodunnit: "Usuário"
+
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"        
+
+      messages:
+        record_invalid: "A validação falhou: %{errors}"
+        taken: "já existe"
+        <<: *errors_messages
+
+      models:
+        user:
+          delete: "O sistema precisa ter ao menos um usuário"
+          missing_password: "A senha não foi definida"
+          self_delete: "Você não pode se deletar"
+          invalid_role_was: "era maior do que seu papel"
+          invalid_role: "não pode ser maior do que seu papel"
+          invalid_role_full: "O papel do usuário não pode ser maior do que o seu papel"
+      template:
+        body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+        header:
+          one: "Não foi possível gravar %{model}: 1 erro"
+          other: "Não foi possível gravar %{model}: %{count} erros."
+
+    models:
+      account:
+        one: "Conta"
+        other: "Contas"
+      email:
+        one: "E-mail"
+        other: "E-mails"
+      game:
+        one: "Jogo"
+        other: "Jogos"
+      group:
+        one: "Grupo"
+        other: "Grupos"
+      role:
+        one: "Papel"
+        other: "Papéis"
+      status:
+        one: "Situação"
+        other: "Situações"
+      user:
+        one: "Usuário"
+        other: "Usuários"
+      version:
+        one: "Log"
+        other: "Log"
+
+  active_scaffold:
+    'false': "Não"
+    'true': "Sim"
+    _select_: "Selecione uma opção"
+    add: "Adicionar"
+    add_existing: "Adicionar Existente"
+    cancel: "Cancelar"
+    cant_destroy_record: "Não é possível excluir %{record}"
+    click_to_reset: "Clique aqui para remover o filtro criado"
+    close: "Fechar"
+    create: "Salvar"
+    create_another : "Criar Outro"
+    create_link: "Adicionar"
+    create_new: "Criar Novo"
+    create_model: "Criar %{model}"
+    create_user_label: "Adicionar Usuário"
+    delete_link: "Excluir"
+    delete_message: "Tem certeza que deseja excluir?"
+    filtered: ""
+    found:
+      one: "Registro Encontrado"
+      other: "Registros Encontrados"
+    hide: "Ocultar"
+    live_search: "Buscar"
+    nested_for_model: ""
+    next: "Próximo"
+    no_entries: "Nenhum Dado Cadastrado"    
+    no_options: "Sem Opções"
+    previous: "Anterior"
+    replace_with_new: ""
+    reset: "Resetar"
+    search: "Buscar"
+    search_link: "Buscar"
+    show: "Mostrar"
+    show_link: "Visualizar"
+    show_model: ""
+    total_label: "Total"
+    update: "Atualizar"
+    update_link: "Editar"
+    update_model: ""
+    update_user_label: "Modificar Usuário"
+
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+
+      messages:
+        record_invalid: "A validação falhou: %{errors}"
+        taken: "já existe"
+        <<: *errors_messages
+
+      template:
+        body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+        header:
+          one: "Não foi possível gravar %{model}: 1 erro"
+          other: "Não foi possível gravar %{model}: %{count} erros."
+  helpers:
+    select:
+      prompt: "Por favor selecione"
+
+    submit:
+      create: 'Criar %{model}'
+      submit: 'Salvar %{model}'
+      update: 'Atualizar %{model}'
+
+  rescue_blank_text: "Não informado"
+

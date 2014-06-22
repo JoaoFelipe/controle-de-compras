@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>Compras Steam</title>
+  <%#= favicon_link_tag 'logo-circle.png' %>
+
+  <%= stylesheet_link_tag "application", :media => "all" %>
+
+
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<span class="notice"><%= notice %></span>
+
+<div id='main_content'>
+  <div class='menu'>
+    <div class='header'>
+      <div class='logo'>
+        <%= link_to root_path do %>
+          Compras Steam  
+        <% end %>
+      </div>
+      <div class="sub">
+        <span id="comprasgif">
+          Versão <%= APP_VERSION %> 
+        </span>
+      </div>
+    </div>
+
+    <div class='menu_content' <%= transparent_if_logged_out %>>
+      
+      <div class='clear_float'></div>
+      <div class='content_wrapper'>
+        <div id='sub_navigation' <%= display_none_if_logged_out %>><%= render_navigation :level => 2 %></div>
+        <div class='content'>
+          <div id='top_navigation' <%= display_none_if_logged_out %>><%= render_navigation :level => 1 %></div>
+          <div class='clear_float'></div>
+          <div>
+            <%= yield %>
+          </div>
+        </div>
+        <div class='clear_float'></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

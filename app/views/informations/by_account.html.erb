@@ -1,0 +1,41 @@
+<div id="as_statuses-active-scaffold" class="active-scaffold active-scaffold-as_statuses  statuses-view default-theme">
+  <div class="active-scaffold-header">
+  	<h2> Por conta </h2>
+  </div>
+  <div id="as_stats-content" class="as_content stats_content">
+    <div id="accordion">
+      <% @accounts.each_pair do |login, info| %>
+        <h3> <%= "#{info[:system]} - #{info[:login]}" %> </h3>
+        <div>
+        	<table class="showtable listed-records-table">
+        		<thead>
+        			<tr>
+        				<th> Nome </th>
+        			</tr>
+        		</thead>
+        		<tbody class="records">
+        			<% count = 0 %>
+        			<% info[:games].each do |game| %>
+        				<% count += 1 %>
+            			<% tr_class = count.even? ? "even-record" : "" %>
+        				<tr class="record <%=tr_class%>">
+        					<td> <%= game %> </td>
+        				</tr>
+        			<% end %>
+        		</tbody>
+        	</table>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $( "#accordion" ).accordion({
+      collapsible: true,
+      heightStyle: "content",
+      active: false
+    });
+  });
+</script>
